@@ -34,3 +34,6 @@ Kims_Cargo_Project_Foundation_Pack.zip
 .DS_Store
 *.suo
 *.sw?
+
+# Superpowers plan workspaces (scratch)
+.superpowers/

@@ -1,1 +1,74 @@
 @import 'tailwindcss';
+
+/* Waybill brand tokens (docs/superpowers/specs/2026-10-26-waybill-brand-design.md §5–6).
+   This file is the single source of truth; src/brand.tokens.test.ts checks contrast. */
+@theme {
+  --color-tarmac: #26292B;
+  --color-road: #2B2E30;
+  --color-road-2: #34383A;
+  --color-cab: #FBFBF9;
+  --color-plate: #F6C400;
+  --color-chevron: #C8102E;
+  --color-carbon: #2B3990;
+  --color-ink: #1D1D1F;
+  --color-muted: #454A57;
+  --color-muted-dark: #C3C8CA;
+  --color-muted-dark-2: #D3D7D8;
+  --color-rule: #C9CCD6;
+  --color-copy-yellow: #FFF3B0;
+  --color-copy-pink: #F8D7E3;
+
+  --font-display: 'Kanit', sans-serif;
+  --font-sans: 'Libre Franklin', system-ui, sans-serif;
+  --font-hand: 'Kalam', cursive;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cab);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Glass (spec §7). Body text only on .glass-sheet (≥0.8 opacity) or solid surfaces. */
+@layer components {
+  .glass-sheet {
+    background-color: rgb(255 255 255 / 0.86);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    border: 1px solid rgb(255 255 255 / 0.7);
+  }
+  .glass-bar {
+    background-color: rgb(38 41 43 / 0.6);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border-bottom: 1px solid rgb(255 255 255 / 0.14);
+  }
+  .glass-button {
+    background-color: rgb(255 255 255 / 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgb(255 255 255 / 0.45);
+  }
+
+  /* Focus rings: plate yellow on dark surfaces, carbon blue on light (spec §9). */
+  .focus-dark:focus-visible {
+    outline: 3px solid var(--color-plate);
+    outline-offset: 2px;
+  }
+  .focus-light:focus-visible {
+    outline: 3px solid var(--color-carbon);
+    outline-offset: 2px;
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-sheet { background-color: #FFFFFF; }
+  .glass-bar, .glass-button { background-color: #26292B; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-sheet { background-color: #FFFFFF; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .glass-bar, .glass-button { background-color: #26292B; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
