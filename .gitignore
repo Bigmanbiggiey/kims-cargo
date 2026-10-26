@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+coverage
+
+# Secrets — never commit real environment files
+.env
+.env.*
+!.env.example
+supabase/functions/.env
+!supabase/functions/.env.example
+
+# Supabase CLI local state
+supabase/.temp
+supabase/.branches
+
+# Vercel
+.vercel
+
+# Original planning pack (copied to CLAUDE.md, docs/, prompts/ at the root)
+Kims_Cargo_Project_Foundation_Pack/
+Kims_Cargo_Project_Foundation_Pack.zip
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.sw?
