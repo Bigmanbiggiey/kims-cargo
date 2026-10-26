@@ -53,6 +53,19 @@ Every visible link, button and field was focused by script at 1280 px, and its o
 | /en/contact | 22 | 0 |
 | /en/quote | 20 | 0 |
 
+## Final review fixes
+
+An independent whole-branch review found that on phones and tablets the yellow road shapes sat behind the headline and intro text. That is a contrast failure the overflow and focus scripts could not catch. It's now fixed, and the shapes are hidden below 900 px.
+
+The review fixes also added:
+- scroll-to-top and focus on the main content after navigating;
+- `lang="en"` on `/sw` pages until Swahili text exists;
+- a fixed (sticky) menu bar;
+- 44 px link targets in the footer;
+- removal of the About promise of request numbers, which arrive in Phase 3.
+
+Suite after fixes: **90 passed / 90**, with lint, type check and build passing.
+
 ## Not verified here
 
 - **Visual screenshots:** the browser's screenshot call timed out twice, so there is no visual capture in this record. Layout matches the canvas by construction, but a human look on a real phone is still recommended at Gate 2.
