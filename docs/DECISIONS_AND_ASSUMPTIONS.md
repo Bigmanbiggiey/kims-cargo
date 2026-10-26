@@ -74,6 +74,8 @@ These assumptions must not be treated as client-confirmed if not explicitly appr
 | D-31 | **Approved 26 Oct 2026:** earliest date is tomorrow; latest is +90 days; time windows 6–9, 9–12, 12–3, 3–7 (Nairobi time); Sunday can be chosen but labelled "on request — subject to confirmation". | None. |
 | D-32 | Analytics: **approved 26 Oct 2026** — **Vercel Web Analytics** (free on Hobby — to verify; no cookies, so no consent banner expected). Alternative: Cloudflare Web Analytics. | None. |
 | D-33 | Client approved payment milestones and scope exclusions in writing (Q14). | None. |
+| D-34 | Gate 1 passed (26 Oct 2026): scaffold approved; Phase 2 started with in-scope design option **(a)** — colour palette, typography and a text-based wordmark, not a full logo/brand identity. Three directions proposed on a design canvas; choice pending. | Stays within KES 50,000 scope. |
+| D-35 | **Brand direction approved (26 Oct 2026): "Waybill"**, a combination of Tailgate and Delivery Note with frosted-glass panels, using the client's logo with "&" added ("KIM'S & CARGO'S LOGISTICS"). Spec: `docs/superpowers/specs/2026-10-26-waybill-brand-design.md`. Logo files: `public/brand/`. | Edited logo is a raster rebuild from the JPEG; a vector original is still wanted for large-format signwriting. Client sign-off on the "&" edit to be confirmed. |
 
 ## Issues still open
 
