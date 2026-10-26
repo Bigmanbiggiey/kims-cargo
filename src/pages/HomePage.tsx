@@ -113,7 +113,7 @@ export function HomePage() {
           >
             <h2 className="font-display text-[26px] font-semibold">{item.title}</h2>
             <p className="text-[17px] leading-relaxed text-muted">{item.text}</p>
-            <Link to={localePath(locale, item.to)} className="focus-light font-bold text-carbon">
+            <Link to={localePath(locale, item.to)} className="focus-light inline-flex min-h-11 items-center self-start font-bold text-carbon">
               {item.link}
             </Link>
           </div>

@@ -25,10 +25,11 @@ describe('routing', () => {
     expect(await screen.findByRole('heading', { level: 1, name: "We can't find that page" })).toBeVisible()
   })
 
-  it('sets the document language from the URL', async () => {
-    renderAt('/sw/fleet')
+  it('sets the document language to the language of the text shown', async () => {
+    document.documentElement.lang = ''
+    renderAt('/en/fleet')
     await screen.findByRole('heading', { level: 1, name: 'Fleet' })
-    expect(document.documentElement.lang).toBe('sw')
+    expect(document.documentElement.lang).toBe('en')
   })
 
   it('sets a page title', async () => {

@@ -1,6 +1,6 @@
 /* oxlint-disable react/only-export-components -- the page-title hook belongs with the layout */
-import { useEffect } from 'react'
-import { Outlet } from 'react-router'
+import { useEffect, useRef } from 'react'
+import { Outlet, useLocation } from 'react-router'
 import { useT } from '../../i18n/locale'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
@@ -14,6 +14,21 @@ export function usePageTitle(title: string) {
 
 export function Layout() {
   const t = useT()
+  const { pathname } = useLocation()
+  const mainRef = useRef<HTMLElement>(null)
+  const firstRender = useRef(true)
+
+  // On navigation (not first load): start the new page at the top and move focus to its content,
+  // so keyboard and screen-reader users land on the new page instead of a hidden menu link.
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    window.scrollTo(0, 0)
+    mainRef.current?.focus({ preventScroll: true })
+  }, [pathname])
+
   return (
     <div className="flex min-h-svh flex-col">
       <a
@@ -23,7 +38,7 @@ export function Layout() {
         {t('nav.skip')}
       </a>
       <SiteHeader />
-      <main id="main" tabIndex={-1} className="flex-1 outline-none">
+      <main ref={mainRef} id="main" tabIndex={-1} className="flex-1 outline-none">
         <Outlet />
       </main>
       <SiteFooter />

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router'
 import { Layout } from './components/layout/Layout'
-import { isLocale, LocaleProvider } from './i18n/locale'
+import { contentLang, isLocale, LocaleProvider } from './i18n/locale'
 import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
 import { FleetPage } from './pages/FleetPage'
@@ -17,7 +17,7 @@ function LocaleGate() {
   const { pathname, search } = useLocation()
 
   useEffect(() => {
-    if (isLocale(lang)) document.documentElement.lang = lang
+    if (isLocale(lang)) document.documentElement.lang = contentLang(lang)
   }, [lang])
 
   if (!isLocale(lang)) {

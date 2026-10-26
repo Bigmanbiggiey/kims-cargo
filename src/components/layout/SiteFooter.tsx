@@ -10,7 +10,7 @@ const YEAR = new Date().getFullYear()
 export function SiteFooter() {
   const t = useT()
   const locale = useLocale()
-  const linkClass = 'focus-dark text-muted-dark-2 no-underline hover:text-cab'
+  const linkClass = 'focus-dark inline-flex min-h-11 items-center text-muted-dark-2 no-underline hover:text-cab'
 
   return (
     <footer className="bg-tarmac text-cab">
@@ -21,7 +21,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-1.5">
             <h2 className="font-display text-[19px] font-semibold">{t('footer.callOrWhatsapp')}</h2>
             {site.phones.map((p) => (
-              <a key={p.display} href={telHref(p.display)} className="focus-dark text-lg font-bold text-cab no-underline">
+              <a key={p.display} href={telHref(p.display)} className="focus-dark inline-flex min-h-11 items-center text-lg font-bold text-cab no-underline">
                 {p.display}
               </a>
             ))}
@@ -48,7 +48,7 @@ export function SiteFooter() {
         <span>
           © {YEAR} {t('footer.copyright')}
         </span>
-        <a href="#privacy" className="focus-dark text-muted-dark">
+        <a href="#privacy" className="focus-dark inline-flex min-h-11 items-center text-muted-dark">
           {t('footer.privacy')}
         </a>
       </div>

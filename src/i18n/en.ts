@@ -140,7 +140,6 @@ export const en = {
     teamPhoto: 'Photo of the team to come',
     expectTitle: 'What you can expect',
     expect1: "A price and a day agreed with you before anything is booked.",
-    expect2: 'A request number for every enquiry, so nothing gets lost.',
     expect3: 'Loading from 6 am, Monday to Saturday. Sundays by arrangement.',
     expect4: 'Two numbers that both take calls and WhatsApp.',
     detailsTitle: 'Company details',

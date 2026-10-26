@@ -17,6 +17,11 @@ export function localePath(locale: Locale, path: string): string {
 }
 
 const dictionaries: Record<Locale, unknown> = { en, sw }
+
+/** The language the page text is actually in: Swahili only once translations exist (WCAG 3.1.1). */
+export function contentLang(locale: Locale): Locale {
+  return locale === 'sw' && Object.keys(sw).length === 0 ? 'en' : locale
+}
 const warned = new Set<string>()
 
 function lookup(dict: unknown, key: string): string | undefined {

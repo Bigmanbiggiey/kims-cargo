@@ -11,8 +11,8 @@ export function RoadScene({ variant }: { variant: 'hero' | 'band' }) {
       >
         <rect width="1280" height="320" fill="var(--color-road)" />
         <path d="M760 0 L1280 0 L1280 320 L640 320 Z" fill="var(--color-road-2)" />
-        <path d="M960 40 L984 40 L900 220 L876 220 Z" fill="var(--color-plate)" />
-        <rect x="1060" y="140" width="200" height="140" rx="10" fill="var(--color-plate)" />
+        <path data-decor className="max-[899px]:hidden" d="M960 40 L984 40 L900 220 L876 220 Z" fill="var(--color-plate)" />
+        <rect data-decor className="max-[899px]:hidden" x="1060" y="140" width="200" height="140" rx="10" fill="var(--color-plate)" />
       </svg>
     )
   }
@@ -25,10 +25,10 @@ export function RoadScene({ variant }: { variant: 'hero' | 'band' }) {
     >
       <rect width="1280" height="680" fill="var(--color-road)" />
       <path d="M700 0 L1280 0 L1280 680 L470 680 Z" fill="var(--color-road-2)" />
-      <path d="M880 0 L904 0 L790 230 L766 230 Z M740 320 L764 320 L650 550 L626 550 Z" fill="var(--color-plate)" />
-      <rect x="1000" y="110" width="250" height="160" rx="10" fill="var(--color-plate)" />
-      <rect x="1030" y="350" width="210" height="130" rx="10" fill="var(--color-chevron)" />
-      <circle cx="1120" cy="600" r="90" fill="var(--color-plate)" opacity="0.5" />
+      <path data-decor className="max-[899px]:hidden" d="M880 0 L904 0 L790 230 L766 230 Z M740 320 L764 320 L650 550 L626 550 Z" fill="var(--color-plate)" />
+      <rect data-decor className="max-[899px]:hidden" x="1000" y="110" width="250" height="160" rx="10" fill="var(--color-plate)" />
+      <rect data-decor className="max-[899px]:hidden" x="1030" y="350" width="210" height="130" rx="10" fill="var(--color-chevron)" />
+      <circle data-decor className="max-[899px]:hidden" cx="1120" cy="600" r="90" fill="var(--color-plate)" opacity="0.5" />
     </svg>
   )
 }

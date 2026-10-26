@@ -5,7 +5,7 @@ import { Pending } from '../components/ui/Pending'
 import { site } from '../content/site'
 import { type MessageKey, useT } from '../i18n/locale'
 
-const expectations: MessageKey[] = ['about.expect1', 'about.expect2', 'about.expect3', 'about.expect4']
+const expectations: MessageKey[] = ['about.expect1', 'about.expect3', 'about.expect4']
 
 function Detail({ label, children, first = false }: { label: string; children: ReactNode; first?: boolean }) {
   return (
