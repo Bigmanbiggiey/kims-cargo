@@ -1,6 +1,7 @@
 import { type MouseEvent, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router'
 import { localePath, useLocale, useT } from '../../i18n/locale'
+import { Logo } from '../brand/Logo'
 
 const pages = [
   ['/services', 'nav.services'],
@@ -40,7 +41,7 @@ export function SiteHeader() {
     <header className="glass-bar absolute inset-x-0 top-0 z-40 text-cab">
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-6 px-4 min-[900px]:h-[72px] min-[900px]:px-12">
         <Link to={localePath(locale, '/')} className="focus-dark flex items-center gap-3 no-underline">
-          <img src="/brand/mark-light.png" alt="" className="h-7 w-auto min-[900px]:h-[34px]" />
+          <Logo kind="mark" tone="light" decorative className="h-7 w-auto min-[900px]:h-[34px]" />
           <span className="font-display text-lg font-bold min-[900px]:text-[21px]">{t('common.brand')}</span>
         </Link>
 

@@ -2,6 +2,8 @@ import { Link } from 'react-router'
 import { site } from '../../content/site'
 import { localePath, useLocale, useT } from '../../i18n/locale'
 import { telHref } from '../../lib/links'
+import { ChevronBand } from '../brand/ChevronBand'
+import { Logo } from '../brand/Logo'
 
 const YEAR = new Date().getFullYear()
 
@@ -12,12 +14,9 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-tarmac text-cab">
-      <div
-        aria-hidden="true"
-        className="h-4 bg-[repeating-linear-gradient(135deg,var(--color-chevron)_0_24px,var(--color-cab)_24px_48px)]"
-      />
+      <ChevronBand />
       <div className="mx-auto flex max-w-[1280px] flex-col gap-10 px-4 py-10 min-[900px]:flex-row min-[900px]:gap-16 min-[900px]:px-12">
-        <img src="/brand/logo-light.png" alt={t('common.logoAlt')} className="h-24 w-auto self-start min-[900px]:h-28" />
+        <Logo kind="full" tone="light" className="h-24 w-auto self-start min-[900px]:h-28" />
         <div className="grid flex-1 gap-8 text-base leading-relaxed sm:grid-cols-3">
           <div className="flex flex-col gap-1.5">
             <h2 className="font-display text-[19px] font-semibold">{t('footer.callOrWhatsapp')}</h2>
