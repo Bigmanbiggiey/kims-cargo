@@ -1,4 +1,4 @@
-import { type FormEvent } from 'react'
+import { type FormEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { ChevronBand } from '../components/brand/ChevronBand'
 import { Logo } from '../components/brand/Logo'
@@ -9,6 +9,7 @@ import { GlassSheet } from '../components/ui/GlassSheet'
 import { site } from '../content/site'
 import { localePath, type MessageKey, useLocale, useT } from '../i18n/locale'
 import { telHref, waHref } from '../lib/links'
+import { dateRange } from '../../supabase/functions/_shared/quoteRules.ts'
 
 const whatsappDefault = site.phones[0].display
 
@@ -33,8 +34,9 @@ export function HomePage() {
   const locale = useLocale()
   const navigate = useNavigate()
   usePageTitle(t('home.title'))
+  const [range] = useState(() => dateRange(new Date()))
 
-  // Phase 2: carry what was typed to the quote page; Phase 3 replaces this with the real form.
+  // Carry what was typed to the quote form, which picks it up from the URL.
   const onStart = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const data = new FormData(e.currentTarget)
@@ -85,7 +87,7 @@ export function HomePage() {
               </label>
               <label className="flex flex-col text-[13px] font-semibold text-muted">
                 {t('home.preferredDay')}
-                <input name="day" type="text" className={handInput} />
+                <input name="day" type="date" min={range.min} max={range.max} className={handInput} />
               </label>
               <p className="text-sm leading-normal text-muted">{t('home.startNext')}</p>
               <button
