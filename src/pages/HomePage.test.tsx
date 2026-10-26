@@ -36,7 +36,7 @@ describe('home page', () => {
   it('shows the full logo in the hero', async () => {
     renderAt('/en')
     const main = await screen.findByRole('main')
-    expect(within(main).getByRole('img', { name: "Kim's & Cargo's Logistics" })).toHaveAttribute(
+    expect(within(main).getByRole('img', { name: 'Kims Cargo & Logistics' })).toHaveAttribute(
       'src',
       '/brand/logo-light.png',
     )

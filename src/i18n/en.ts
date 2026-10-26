@@ -16,8 +16,8 @@ export const en = {
     swahili: 'Kiswahili',
   },
   common: {
-    brand: "Kim's & Cargo's",
-    logoAlt: "Kim's & Cargo's Logistics",
+    brand: 'Kims Cargo & Logistics',
+    logoAlt: 'Kims Cargo & Logistics',
     requestQuote: 'Request a quote',
     whatsapp: 'WhatsApp',
     whatsappUs: 'WhatsApp us',
@@ -36,7 +36,7 @@ export const en = {
     hoursSunday: 'Sundays by arrangement',
     pages: 'Pages',
     privacy: 'Privacy notice',
-    copyright: "Kim's & Cargo's Logistics Company",
+    copyright: 'Kims Cargo & Logistics',
   },
   home: {
     title: 'Home',
@@ -241,7 +241,7 @@ export const en = {
     sendOnWhatsapp: 'Send it on WhatsApp too',
     another: 'Send another request',
     sendDetails: 'Send these details on WhatsApp',
-    waGreeting: "Hello Kim's & Cargo's, I'd like a quote.",
+    waGreeting: "Hello Kims Cargo & Logistics, I'd like a quote.",
     waRequestNo: 'Request No.',
     waPickup: 'Pickup',
     waDropoff: 'Drop-off',

@@ -17,7 +17,7 @@ describe('waHref', () => {
   })
 
   it('encodes apostrophes, ampersands and newlines in the message', () => {
-    const text = "Hello Kim's & Cargo's\nPickup: Kitengela"
+    const text = "Hello Kims Cargo & Logistics\nPickup: Mama Njeri's shop, Kitengela"
     expect(waHref('0745 822 788', text)).toBe('https://wa.me/254745822788?text=' + encodeURIComponent(text))
   })
 

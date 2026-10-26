@@ -65,7 +65,7 @@ Deno.serve((req) =>
       const { subject, text } = buildEmail(quote, requestNo)
       try {
         await mailer.sendMail({
-          from: { name: "Kim's & Cargo's website", address: config.smtpUser || config.recipient },
+          from: { name: 'Kims Cargo & Logistics website', address: config.smtpUser || config.recipient },
           to: config.recipient,
           ...(quote.email ? { replyTo: quote.email } : {}),
           subject,

@@ -35,7 +35,7 @@ describe('routing', () => {
   it('sets a page title', async () => {
     renderAt('/en/fleet')
     await screen.findByRole('heading', { level: 1, name: 'Fleet' })
-    expect(document.title).toBe("Fleet | Kim's & Cargo's")
+    expect(document.title).toBe('Fleet | Kims Cargo & Logistics')
   })
 
   it('marks the current page in the main menu', async () => {

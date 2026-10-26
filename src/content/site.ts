@@ -30,8 +30,8 @@ const areaGroups: readonly AreaGroup[] = [
 ]
 
 export const site = {
-  legalName: "Kim's & Cargo's Logistics Company",
-  brandName: "Kim's & Cargo's",
+  legalName: 'Kims Cargo & Logistics',
+  brandName: 'Kims Cargo & Logistics',
   /** Both numbers take calls, SMS and WhatsApp (D-26). Index 0 is the WhatsApp default. */
   phones: [{ display: '0745 822 788' }, { display: '0783 330 889' }],
   email: 'kimsandcargos1@gmail.com',

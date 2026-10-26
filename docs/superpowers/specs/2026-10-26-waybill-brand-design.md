@@ -49,7 +49,11 @@ The site has to win over two audiences at once:
   - `logo-dark.png`: charcoal, full lockup.
   - `logo-light.png`: white, full lockup.
   - `mark-dark.png` and `mark-light.png`: truck emblem only.
-- **Source:** raster rebuilt from the client JPEG (`public/LOGO`). The background checkerboard was removed and an "&" in Poppins Bold was added, sitting on the logo's baseline.
+- **Wording (corrected by the founder, 26 Oct 2026, D-37):** "KIMS CARGO &" over "LOGISTICS". No apostrophes. The earlier "KIM'S & CARGO'S" edit was wrong.
+- **Source:**
+  - The truck emblem is the client's own, taken from the JPEG (`public/LOGO`) with the checkerboard background removed.
+  - The wordmark is re-set in Poppins Bold (top line) and Poppins SemiBold, letter-spaced (LOGISTICS), on the original baselines and at the original sizes.
+  - The emblem-only files (`mark-*.png`) are unchanged.
 - **Usage:**
   - Light version on Tarmac or Road backgrounds; dark version on white or Cab white.
   - Full lockup: at least 96 px tall on screen.
@@ -57,7 +61,7 @@ The site has to win over two audiences at once:
 - **Clear space:** at least the height of the "LOGISTICS" line on all sides.
 - **Don'ts:** never recolour the logo into yellow, red or blue; never place it on glass over a busy photo; never stretch it.
 - **Open:**
-  - The client must approve the "&" edit.
+  - The client must approve the corrected wordmark.
   - A vector original is wanted before any large-format print or signwriting.
 
 ## 5. Colour

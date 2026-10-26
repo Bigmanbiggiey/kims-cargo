@@ -11,7 +11,7 @@ import { RoadScene } from './RoadScene'
 describe('Logo', () => {
   it('renders the full light logo with its name as alt text', () => {
     render(<Logo kind="full" tone="light" />)
-    expect(screen.getByRole('img', { name: "Kim's & Cargo's Logistics" })).toHaveAttribute('src', '/brand/logo-light.png')
+    expect(screen.getByRole('img', { name: 'Kims Cargo & Logistics' })).toHaveAttribute('src', '/brand/logo-light.png')
   })
 
   it('renders a decorative mark with empty alt text', () => {

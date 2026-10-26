@@ -42,7 +42,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-6 px-4 min-[900px]:h-[72px] min-[900px]:px-12">
         <Link to={localePath(locale, '/')} className="focus-dark flex items-center gap-3 no-underline">
           <Logo kind="mark" tone="light" decorative className="h-7 w-auto min-[900px]:h-[34px]" />
-          <span className="font-display text-lg font-bold min-[900px]:text-[21px]">{t('common.brand')}</span>
+          <span className="font-display text-base font-bold leading-tight min-[360px]:whitespace-nowrap min-[400px]:text-lg min-[900px]:text-[21px]">{t('common.brand')}</span>
         </Link>
 
         <button

@@ -8,7 +8,7 @@ import { SiteHeader } from './SiteHeader'
 /** Sets the browser tab title for the current page. */
 export function usePageTitle(title: string) {
   useEffect(() => {
-    document.title = `${title} | Kim's & Cargo's`
+    document.title = `${title} | Kims Cargo & Logistics`
   }, [title])
 }
 
