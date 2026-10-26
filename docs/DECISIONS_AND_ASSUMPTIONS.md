@@ -77,12 +77,32 @@ These assumptions must not be treated as client-confirmed if not explicitly appr
 | D-34 | Gate 1 passed (26 Oct 2026): scaffold approved; Phase 2 started with in-scope design option **(a)** — colour palette, typography and a text-based wordmark, not a full logo/brand identity. Three directions proposed on a design canvas; choice pending. | Stays within KES 50,000 scope. |
 | D-35 | **Brand direction approved (26 Oct 2026): "Waybill"**, a combination of Tailgate and Delivery Note with frosted-glass panels, using the client's logo with "&" added ("KIM'S & CARGO'S LOGISTICS"). Spec: `docs/superpowers/specs/2026-10-26-waybill-brand-design.md`. Logo files: `public/brand/`. | Edited logo is a raster rebuild from the JPEG; a vector original is still wanted for large-format signwriting. Client sign-off on the "&" edit to be confirmed. |
 
+| D-36 | **Phase 3 started (26 Oct 2026)** on branch `phase-3-quote` (built on `phase-2-pages`; merge deferred by the founder). Founder accepted the proposed fields: **required:** name, phone, pickup, drop-off, type of load, preferred day, time window; **optional:** email, what the load is, weight, size or item count, notes. | In scope. |
+
+### Phase 3 implementation calls (made by Claude Code; for founder review at Gate 3)
+
+| ID | Call | Why / risk |
+|---|---|---|
+| C-1 | Five load types, matching the services: construction, timber and hardware, farm produce, shop stock (closed box), something else. | Mirrors the Services page. Easy to change in one file (`supabase/functions/_shared/quoteRules.ts`) plus a DB check constraint. |
+| C-2 | Phone must be a Kenyan number (07…, 01…, +254…); stored as +254… | Matches the market. Customers abroad would have to call or WhatsApp. |
+| C-3 | Weight and size are free text, not number fields. | Customers estimate ("about 3 tonnes", "40 bags"). No pricing is calculated from them. |
+| C-4 | Calendar is the browser's native date picker, limited to tomorrow → +90 days, plus four time-window buttons. | Accessible and keyboard-friendly on every current browser, no extra library. |
+| C-5 | Same rules run in the browser and on the server, from one shared file. | The server never trusts the browser. |
+| C-6 | Rate limit: 5 saved requests per visitor IP per hour. Duplicate = same phone, route, day and window within 24 hours; the customer gets the original request number back and no second email is sent. | Proportionate for a two-lorry business. Not perfect protection. |
+| C-7 | If saving works but the email fails, the customer still sees "Received" (it is saved), plus a request to also send it on WhatsApp. If saving fails, they see "not sent". | Never claims delivery that didn't happen (Acceptance C). |
+| C-8 | Notification email is plain text only, with the customer's email as Reply-To when given. | Customer text can never become HTML or a link trap. |
+| C-9 | `submit-quote` has `verify_jwt = false`; it accepts only listed website origins (`ALLOWED_ORIGINS`). | Anonymous visitors call it; Turnstile, the honeypot, rate limits and size limits do the protecting. |
+| C-10 | Visitor IP read from `cf-connecting-ip`, then `x-real-ip`, then `x-forwarded-for`. Only a salted SHA-256 hash is stored. | A spoofed X-Forwarded-For could get round the limit otherwise. **Which header Supabase sets in production must be re-checked on deploy.** |
+| C-11 | Library versions pinned: `@supabase/supabase-js@2.117.3`, `nodemailer@10.0.16` (Deno `npm:` imports, no new website dependencies). | Both releases were more than two weeks old. |
+
 ## Issues still open
 
 1. **Payload figure is inconsistent.** "8–10 tons payload" cannot fit within an 11,000 kg gross vehicle weight, because the empty lorry's own weight is part of the GVW. The client must correct this before it is published.
 2. **Branding/logo.** Q6 says TECHBIGGIEY should create the branding, but `REQUIREMENTS.md` §3 excludes logo/brand identity work. Either a change approval (cost/time impact) or a lightweight in-scope design direction (colour palette, typography, text-based wordmark) is needed.
 3. Gmail App Password for `kimsandcargos1@gmail.com` (needs 2-Step Verification on that account) — needed before Phase 3 email testing.
 4. Domain — ask before launch (Q2).
+5. **Privacy notice.** The quote form says requests are kept until the customer asks for deletion (D-17), but the footer "Privacy notice" link has no page yet. Wording needs founder/client approval before launch.
+6. **Production Turnstile keys and the Cloudflare account** (D-20/D-25) are needed before deploy. Local testing used Cloudflare's always-pass test keys.
 
 Resolved 26 Oct 2026: WhatsApp/call numbers (D-26), sending Gmail (D-16), account ownership (D-25), calendar rules (D-31), analytics (D-32). **Phase 1 approved by the founder on 26 Oct 2026.**
 
