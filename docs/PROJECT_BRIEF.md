@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Build a professional, mobile-first website for **KIM'S & CARGO'S LOGISTICS COMPANY**, delivered by TECHBIGGIEY. The website should explain services and fleet, communicate coverage areas, and let prospective customers submit structured cargo quote enquiries with a requested date/time.
+Build a professional, mobile-first website for **KIMS CARGO & LOGISTICS** (name corrected 26 Oct 2026, D-37), delivered by TECHBIGGIEY. The website should explain services and fleet, communicate coverage areas, and let prospective customers submit structured cargo quote enquiries with a requested date/time.
 
 - Project reference: `TBG-KCLC-001`
 - Baseline date: 26 October 2026

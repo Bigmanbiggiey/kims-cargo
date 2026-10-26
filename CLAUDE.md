@@ -1,4 +1,4 @@
-# Claude Code Instructions — KIM'S & CARGO'S LOGISTICS COMPANY
+# Claude Code Instructions — KIMS CARGO & LOGISTICS
 
 ## Team operating model
 
@@ -11,7 +11,7 @@ The founder and ChatGPT do planning and make decisions in the ChatGPT conversati
 
 ## Project facts
 
-- Client: KIM'S & CARGO'S LOGISTICS COMPANY
+- Client: KIMS CARGO & LOGISTICS (name corrected 26 Oct 2026, D-37; registered legal name to be confirmed)
 - Project reference: TBG-KCLC-001
 - Delivery partner: TECHBIGGIEY
 - Approved project price: KES 50,000
