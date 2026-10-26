@@ -1,6 +1,6 @@
 # Waybill: brand and visual design
 
-**Status:** brand direction approved by the founder on 26 Oct 2026 (D-35). This spec is awaiting approval before implementation planning.
+**Status:** brand direction and this spec approved by the founder on 26 Oct 2026 (D-35). Implementation plan: `docs/superpowers/plans/2026-10-26-phase-2-waybill-pages.md`.
 **Reference board:** "Tailgate + Delivery Note, with the client logo" on the Round 2 canvas (https://claude.ai/artifact/Uw19nNK6esbABJ1M1eLBK5).
 
 ## 1. Intent
