@@ -1,3 +1,5 @@
+import type { MessageKey } from '../i18n/types'
+
 // Confirmed site facts (docs/DECISIONS_AND_ASSUMPTIONS.md). Write each fact once here.
 // `null` means the client has not confirmed it yet; pages render <Pending> for it.
 
@@ -5,7 +7,7 @@ export type FleetItem = {
   id: 'isuzu-frr33' | 'fuso-fh'
   name: string
   /** i18n key for the body description, e.g. 'fleet.isuzuBody' */
-  bodyKey: string
+  bodyKey: MessageKey
   payload: string | null
   size: string | null
 }
